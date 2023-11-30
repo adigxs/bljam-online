@@ -32,9 +32,15 @@ $active=2;
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="author" content="colorlib.com">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+	 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  
+   
 <style>
 input[type=text], input[type=password] {
   padding: 10px;
@@ -282,29 +288,20 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
+  width: 50%;
   border-left-style: solid;
     border-color: #c4a218;
 
 }
 
-.price2 {
-    list-style-type: none;
-  margin: 0;
-  padding: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-   float: left;
-  width: 33.3%;
 
-}
 .price1 {
    list-style-type: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
-  border-right-style: solid;
+  width: 50%;
+
     border-color: #c4a218;
 	
 }
@@ -318,21 +315,121 @@ body {
     border-color: #c4a218;
 
   }
-   .price2 {
-    width: 100%;
-	border-bottom-style: solid;
-	
-    border-color: #c4a218;
-  }
+   
    .price3 {
     width: 100%;
 	border-left-style: none;
   }
 }
 </style>
+<style>
+
+/* Full-width input fields */
+
+/* Set a style for all buttons */
+
+
+button:hover {
+  opacity: 0.8;
+}
+
+/* Extra styles for the cancel button */
+.cancelbtn {
+  width: auto;
+  padding: 10px 18px;
+  background-color: #f44336;
+}
+
+/* Center the image and position the close button */
+.imgcontainer {
+  text-align: center;
+  margin: 24px 0 12px 0;
+  position: relative;
+}
+
+img.avatar {
+  width: 40%;
+  border-radius: 50%;
+}
+
+.container {
+  padding: 16px;
+}
+
+span.psw {
+  float: right;
+  padding-top: 16px;
+}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
+  border: 1px solid #888;
+  width: 50%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button (x) */
+.close {
+  position: absolute;
+  right: 25px;
+  top: 0;
+  color: #000;
+  font-size: 35px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: red;
+  cursor: pointer;
+}
+
+/* Add Zoom Animation */
+.animate {
+  -webkit-animation: animatezoom 0.6s;
+  animation: animatezoom 0.6s
+}
+
+@-webkit-keyframes animatezoom {
+  from {-webkit-transform: scale(0)} 
+  to {-webkit-transform: scale(1)}
+}
+  
+@keyframes animatezoom {
+  from {transform: scale(0)} 
+  to {transform: scale(1)}
+}
+
+/* Change styles for span and cancel button on extra small screens */
+@media screen and (max-width: 300px) {
+  span.psw {
+     display: block;
+     float: none;
+  }
+  .cancelbtn {
+     width: 100%;
+  }
+}
+</style>
 
 </head>
-<body >
+<body>
 
 <div class="header">
   <h2  ></h2>
@@ -344,7 +441,7 @@ include("menu2.php");
 
 <div class="row">
   <div class="leftcolumn">
-	<div class="en_tete_bloc_left"><h3 style="  background: linear-gradient(to right, #c4a218, white);color:white;">Liste des decisions/conseils : Textes et documents du cameroun</h3>  </div>
+	<div class="en_tete_bloc_left"><h3 style="background: linear-gradient(to right, #c4a218, white);color:white;">Liste des decisions/conseils : Textes et documents du cameroun</h3>  </div>
 		<div class="card1">
 	<?php
          if(1) 
@@ -377,8 +474,8 @@ include("menu2.php");
 	  
       while($art = $article->fetch()) {
       ?>
-		  <li><h5 ><a style="color:grey;" href="post.php?article=<?= $art['num_article'] ?>"><?= strtoupper($art['titre_article']) ?></a></h5> </li>
-		  <p style="color:grey;"> <?= $art['description_contenu'] ?> le <?=  utf8_encode($art['date_publication']) ?> --><a style="color:grey;" href="">Lire</a></p>
+		  <li><h5 ><a style="color:grey;" href="post.php?article=<?= $art['num_article'] ?>"><?= strtoupper($art['titre_article']) ?></a><a href="achat.php?article=<?= $art['titre_article'] ?>" >  --><button>Lire</button></a></h5>  </li>
+		
 		 
 		
 			<?php
@@ -406,8 +503,57 @@ include("menu2.php");
 </div>
         <br> 
 	
+<div id="id01" class="modal">
+  
+  <form class="modal-content animate" action="/action_page.php" method="post">
+					
 
-    
+					<div class="container">
+					    <p style="text-align:center;font-size:1.5vw;text-transform: uppercase;">Panier</p>
+						
+					<p>
+						<?php 
+							 $pan = $bdd->prepare('SELECT * FROM panier WHERE id_user = ? ORDER BY id ');
+								  $pan->execute(array($_SERVER['REMOTE_ADDR']));
+								  $total=0;
+								  while($pan_ = $pan->fetch()) {
+									 echo $pan_["volume"]." à ".$pan_["prix"]." xaf <br>";
+									 $total=$pan_["prix"]+$total;
+								  }
+									echo "Total : ".$total." xaf";
+						?>
+						</p>
+						<hr style=" border-top: 3px dashed #c4a218;">
+						
+						 <p style="text-align:center;font-size:1.5vw;text-transform: uppercase;">Identification </p>
+					
+					  <input type="text"  name="uname" placeholder="Nom" required>
+					 
+					  <input type="text"  name="unamee" placeholder="Prénom" required>
+                        <p style="text-align:center; color:white;">.</p>
+					  <hr style=" border-top: 3px dashed #c4a218;">
+						 <p style="text-align:center;font-size:1.5vw;text-transform: uppercase;">Mode de paiement</p>
+						 <table style="margin:auto;">
+		<tr>
+		   <td><img src="img/OIP.jfif" ><td><img src="img/OIP1.jfif" ></td><td><img src="img/th.jfif" ></td><td><img src="img/th1.jfif" > </td>
+		</tr>
+	 </table><br>
+						<hr style=" border-top: 3px dashed #c4a218;">
+						
+					 <input type="submit" value="Acheter" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
+					  
+					  
+					  
+					  
+					  
+					</div>
+
+					<div class="container" style="background-color:#f1f1f1">
+					  <button type="button" onclick="document.getElementById('id01').style.display='none'" class="cancelbtn">Cancel</button>
+					 
+					</div>
+				  </form></div>
+ 
   </div>
 <?php
 include("bloc_de_gauche.php");
@@ -428,6 +574,27 @@ function myFunction() {
   } else {
     x.className = "topnav";
   }
+}
+</script>
+<script>
+// Get the button
+let mybutton = document.getElementById("myBtn");
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function() {scrollFunction()};
+
+function scrollFunction() {
+  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+    mybutton.style.display = "block";
+  } else {
+    mybutton.style.display = "none";
+  }
+}
+
+// When the user clicks on the button, scroll to the top of the document
+function topFunction() {
+  document.body.scrollTop = 0;
+  document.documentElement.scrollTop = 0;
 }
 </script>
 </body>

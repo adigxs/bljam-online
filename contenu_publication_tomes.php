@@ -303,29 +303,20 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
+  width:50%;
   border-left-style: solid;
     border-color: #c4a218;
 
 }
 
-.price2 {
-    list-style-type: none;
-  margin: 0;
-  padding: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-   float: left;
-  width: 33.3%;
 
-}
 .price1 {
    list-style-type: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
-  border-right-style: solid;
+  width: 50%;
+ 
     border-color: #c4a218;
 	
 }
@@ -339,12 +330,7 @@ body {
     border-color: #c4a218;
 
   }
-   .price2 {
-    width: 100%;
-	border-bottom-style: solid;
-	
-    border-color: #c4a218;
-  }
+
    .price3 {
     width: 100%;
 	border-left-style: none;
@@ -575,7 +561,7 @@ include("menu2.php");
 	  $tome->execute(array($_GET['Num_vol']));
       while($tom = $tome->fetch()) {
       ?><ul class="a">
-		  <li><h4><a style="color:grey;" href="contenu_tomes.php?tome=<?= $tom['num_tome']?>&titre=<?=utf8_encode($tom['titre_tome'])?>&Num_vol=<?=$_GET['Num_vol']?>&titre_vol=<?=$_GET['titre']?>"><?= "Tome ".$tom['num_tome']." : ".utf8_encode($tom['titre_tome']) ?></a></h4></li>
+		  <li><h4><a style="color:grey;" href="contenu_tomes.php?tome=<?= $tom['num_tome']?>&titre=<?=$tom['titre_tome']?>&Num_vol=<?=$_GET['Num_vol']?>&titre_vol=<?=$_GET['titre']?>"><?= "Tome ".$tom['num_tome']." : ".$tom['titre_tome'] ?></a></h4></li>
 		 </ul> <div class="img-magnifier-container"><img id="myimage<?= $tom['num_tome'] ?>" src="img/tomes/volumes <?= $tom['Num_vol'] ?>/<?= $tom['num_tome'] ?>.jpg" style="border:1px solid #c4a218; width:200px;height:250px;margin-right:10px; float:left;">
                                </div>
                               <form method="POST" onsubmit="return sendData<?= $tom['num_tome'] ?>()">
@@ -622,7 +608,11 @@ magnify("myimage<?= $tom['num_tome'] ?>", 3);
                         <p style="text-align:center; color:white;">.</p>
 					  <hr style=" border-top: 3px dashed #c4a218;">
 						 <p style="text-align:center;font-size:1.5vw;text-transform: uppercase;">Mode de paiement</p>
-						
+						 <table style="margin:auto;">
+		<tr>
+		   <td><img src="img/OIP.jfif" ><td><img src="img/OIP1.jfif" ></td><td><img src="img/th.jfif" ></td><td><img src="img/th1.jfif" > </td>
+		</tr>
+	 </table><br>
 						<hr style=" border-top: 3px dashed #c4a218;">
 						
 					 <input type="submit" value="Acheter" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">

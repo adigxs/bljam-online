@@ -76,9 +76,8 @@ if (!empty($_GET['formconnexion1'])) {
 	 $num_vol = htmlspecialchars($_GET['num_vol']);
   $num_tome = htmlspecialchars($_GET['num_tome']);
      $Annee= htmlspecialchars($_GET['annee']);
-	   $mois = htmlspecialchars($_GET['mois']);
-	     $jours = htmlspecialchars($_GET['jour']);
-		 $date=$Annee."-".$mois."-".$jours;
+	 
+		 $date=$Annee;
 		 
 	
 	
@@ -344,33 +343,23 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
+  width: 50%;
   border-left-style: solid;
     border-color: #c4a218;
 
 }
 
-.price2 {
-    list-style-type: none;
-  margin: 0;
-  padding: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-   float: left;
-  width: 33.3%;
 
-}
 .price1 {
    list-style-type: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
-  border-right-style: solid;
+  width: 50%;
+
     border-color: #c4a218;
 	
 }
-
 
 @media only screen and (max-width: 600px) {
   .price1 {
@@ -380,12 +369,7 @@ body {
     border-color: #c4a218;
 
   }
-   .price2 {
-    width: 100%;
-	border-bottom-style: solid;
-	
-    border-color: #c4a218;
-  }
+   
    .price3 {
     width: 100%;
 	border-left-style: none;
@@ -423,7 +407,7 @@ include("menu2.php");
 
 			foreach ($articles1 as $article1): ?>
                 <li>
-                    <h4><a style="color:grey;" href="contenu_publication_tomes.php?Num_vol=<?=$article1['Num_vol'] ?>&titre=<?= utf8_encode($article1['Titre_vol']) ?>">Volume <?= $article1['Num_vol'] ?> : <?= utf8_encode($article1['Titre_vol']) ?></a></h4>
+                    <h4><a style="color:grey;" href="contenu_publication_tomes.php?Num_vol=<?=$article1['Num_vol'] ?>&titre=<?= $article1['Titre_vol'] ?>">Volume <?= $article1['Num_vol'] ?> : <?= $article1['Titre_vol'] ?></a></h4>
                    
                 </li>
             <?php endforeach ?>
@@ -463,10 +447,10 @@ include("menu2.php");
 
 			foreach ($articles3 as $article3): ?>
                 <li>
-                    <h3>  <a style="color:grey;" href="post.php?article=<?= $article3['num_article'] ?>"><?= $article3['titre_article'] ?>, Volumes : <?= $article3['Num_vol'] ?> , Tome : <?= $article3['num_tome'] ?></a></h3>
+                    <h4>  <a style="color:grey;" href="post.php?article=<?=$article3['num_article'] ?>"><?= strtoupper($article3['titre_article']) ?>, Volumes : <?= $article3['Num_vol'] ?> , Tome : <?= $article3['num_tome'] ?></a></h4>
                    
                 </li>
-				<p style="color:grey;"><?= utf8_encode($article3['description_contenu']) ?></p>
+				
             <?php endforeach ?>
         </ul>
     <?php endif ?>
@@ -483,10 +467,10 @@ include("menu2.php");
 
 			foreach ($conn as $con3): ?>
                 <li>
-                    <h3>  <a style="color:grey;" href="post.php?article=<?= $con3['num_article'] ?>"><?= $con3['titre_article'] ?>, Volumes : <?= $con3['Num_vol'] ?> , Tome : <?= $con3['num_tome'] ?></a></h3>
+                    <h4> <a style="color:grey;" href="post.php?article=<?= $con3['num_article'] ?>"><?= strtoupper($con3['titre_article']) ?>, Volumes : <?= $con3['Num_vol'] ?> , Tome : <?= $con3['num_tome'] ?></a></h4>
                    
                 </li>
-				<p style="color:grey;"><?= utf8_encode($con3['description_contenu']) ?></p>
+				
             <?php endforeach ?>
         </ul>
     <?php endif  ?></div>

@@ -434,14 +434,14 @@ include("menu2.php");
 
 
   <form action="resultats.php" style="margin:auto;max-width:70%;" method="GET">
-   
-    <input  type="number" id="num_vol" min="1" max="67" name="num_vol" placeholder="Numéro du volume">
-    <input  type="number" id="num_tome" min="1" max="250" name="num_tome" placeholder="Numéro du tome">
-	<input  type="number" id="annee" min="1815" max="2012" name="annee" placeholder="Année: 1998">
-    <input  type="number" id="mois" min="1" max="12" name="mois" placeholder="Mois (Ex: 1)">
-    <input  type="number" id="jour" min="1" max="31" name="jour" placeholder="Jours (Ex: 15)">
- 
-  
+   <table style="margin:auto;max-width:100%;" >
+  <tr >
+	  <td><label>Numéro du volume</label></td><td style="margin:left;width:75%;"><input  type="number" id="num_vol" min="1" max="67" name="num_vol" placeholder=""></td>
+	 </tr>     <tr><td><label>Numéro du tome</label></td><td><input  type="number" id="num_tome" min="1" max="250" name="num_tome" placeholder=""></td>
+		 </tr> <tr><td><label>Année: 1998</label></td><td><input  type="number" id="annee" min="1815" max="2012" name="annee" placeholder=""></td>
+		
+  </tr> 
+  </table>
     <input  type="submit" value="Submit" name="formconnexion1">
   </form>
  

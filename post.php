@@ -262,6 +262,49 @@ body {
  
 }
 </style>
+<style>
+
+.price3{
+    list-style-type: none; 
+  margin: 0;
+  padding: 0;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+   float: left;
+  width:50%;
+  border-left-style: solid;
+    border-color: #c4a218;
+
+}
+
+
+.price1 {
+   list-style-type: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+   float: left;
+  width: 50%;
+ 
+    border-color: #c4a218;
+	
+}
+
+
+@media only screen and (max-width: 600px) {
+  .price1 {
+    width: 100%;
+	border-bottom-style: solid;
+	border-right-style: none;
+    border-color: #c4a218;
+
+  }
+
+   .price3 {
+    width: 100%;
+	border-left-style: none;
+  }
+}
+</style>
 
 </head>
 <body >
@@ -384,10 +427,9 @@ include("bloc_de_gauche.php");
 ?>
   
 </div>
-
-<div class="footer">
-  <h2>Footer</h2>
-</div>
+<?php
+include("footer.php");
+?>
 
 
 <script>

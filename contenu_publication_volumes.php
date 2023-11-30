@@ -302,29 +302,20 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
+  width:50%;
   border-left-style: solid;
     border-color: #c4a218;
 
 }
 
-.price2 {
-    list-style-type: none;
-  margin: 0;
-  padding: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-   float: left;
-  width: 33.3%;
 
-}
 .price1 {
    list-style-type: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
-  border-right-style: solid;
+  width: 50%;
+ 
     border-color: #c4a218;
 	
 }
@@ -338,19 +329,14 @@ body {
     border-color: #c4a218;
 
   }
-   .price2 {
-    width: 100%;
-	border-bottom-style: solid;
-	
-    border-color: #c4a218;
-  }
+
    .price3 {
     width: 100%;
 	border-left-style: none;
   }
 }
 </style>
-	<style>
+<style>
 * {box-sizing: border-box;}
 
 .img-magnifier-container {
@@ -445,9 +431,8 @@ function magnify(imgID, zoom) {
   }
 }
 </script>
-	
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <style>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<style>
 
 /* Full-width input fields */
 
@@ -554,7 +539,7 @@ span.psw {
 </style>
 
 </head>
-<body >
+<body>
 
 <div class="header">
   <h2  ></h2>
@@ -612,7 +597,7 @@ include("menu2.php");
 								 <input style="width:150px; text-align:left;" type="submit" name="submit_form" value="Ajouter au panier">
 							
 							<p>Prix: 10000 XAF</p>
-						      </form><br><br><br><br><br><br><br>
+						      </form><br><br><br><br><br><br><br><br>
 <script>
 /* Initiate Magnify Function
 with the id of the image, and the strength of the magnifier glass:*/
@@ -651,7 +636,11 @@ magnify("myimage<?= $vol['Num_vol'] ?>", 3);
                         <p style="text-align:center; color:white;">.</p>
 					  <hr style=" border-top: 3px dashed #c4a218;">
 						 <p style="text-align:center;font-size:1.5vw;text-transform: uppercase;">Mode de paiement</p>
-						
+						 <table style="margin:auto;">
+		<tr>
+		   <td><img src="img/OIP.jfif" ><td><img src="img/OIP1.jfif" ></td><td><img src="img/th.jfif" ></td><td><img src="img/th1.jfif" > </td>
+		</tr>
+	 </table><br>
 						<hr style=" border-top: 3px dashed #c4a218;">
 						
 					 <input type="submit" value="Acheter" onclick="document.getElementById('id01').style.display='block'" style="width:auto;">
@@ -679,7 +668,7 @@ magnify("myimage<?= $vol['Num_vol'] ?>", 3);
 									<?php if($i == $pageCourante) {?>
 										<?= " <td>".$i."</td> " ?>
 									<?php } else {?>
-										  <?= '<a  class="w3-button" style="background-color:#c4a218;color:white;" href="contenu_publication_volumes .php?page='.$i.'">'.$i.'</a>'?>
+										 <?= '<a  class="w3-button" style="background-color:#c4a218;color:white;" href="contenu_publication_volumes.php?page='.$i.'">'.$i.'</a>'?>
 										 <?php   }
 										   ?>
 								 <?php }
