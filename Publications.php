@@ -269,29 +269,19 @@ body {
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
+  width: 50%;
   border-left-style: solid;
     border-color: #c4a218;
 
 }
 
-.price2 {
-    list-style-type: none;
-  margin: 0;
-  padding: 0;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
-   float: left;
-  width: 33.3%;
-
-}
 .price1 {
    list-style-type: none;
   -webkit-transition: 0.3s;
   transition: 0.3s;
    float: left;
-  width: 33.3%;
-  border-right-style: solid;
+  width: 50%;
+
     border-color: #c4a218;
 	
 }
@@ -305,12 +295,7 @@ body {
     border-color: #c4a218;
 
   }
-   .price2 {
-    width: 100%;
-	border-bottom-style: solid;
-	
-    border-color: #c4a218;
-  }
+   
    .price3 {
     width: 100%;
 	border-left-style: none;
